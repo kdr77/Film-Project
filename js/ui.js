@@ -55,3 +55,15 @@ UI.prototype.loadAllFilms = function(films){
 `;
     });
 }
+UI.prototype.deleteFilmFromUI = function(element){
+    element.parentElement.parentElement.remove();//Filmi silmek istediğimizde komle tr etiketimize uşaıp arayüzden siliyoruz
+    
+}
+UI.prototype.clearAllFilmsFromUI = function(){
+    const filmList = document.getElementById("films");
+    //tbody nin içinde çocuk kalmayana kadar ilk elemanı siliyoruz boşalsın diye 
+    while(filmList.firstElementChild !==null){//Çocuk olduğu sürece sil
+        filmList.firstElementChild.remove();
+
+    }
+}
